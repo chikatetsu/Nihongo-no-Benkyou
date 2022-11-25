@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>日本語の勉強</title>
+		<meta charset="utf-8">
+		<link rel="shortcut icon" href="icone.ico">
+		<link rel="stylesheet" href="nnb.css">
+	</head>
+
+	<body>
+		<header>
+			<div><a href="/">S'exercer</a></div>
+			<div><a href="/rechercher">Rechercher</a></div>
+			<div><a href="/ajouter">Ajouter</a></div>
+		</header>
+
+		<!--Affiche le caractère japonais-->
+		<div id="jap" class="mot_principal"></div>
+		<!--Affiche les kana (enlever si il n'y en a pas)-->
+		<div id="kanaAll" class="flex"><div id="kanaTitle">Kana :</div><div id="kana" class="mot_secondaire"></div></div>
+		<!--Affiche les romajis-->
+		<div id="romaAll" class="flex"><div>Romaji :</div><div id="roma" class="mot_secondaire"></div></div>
+		
+		<div>
+			<form action="" id="form">
+				<!--Les différentes options-->
+				<div><input type="radio" name="input" id="opt1"><label for="opt1" name="qcm"></label></div>
+				<div><input type="radio" name="input" id="opt2"><label for="opt2" name="qcm"></label></div>
+				<div><input type="radio" name="input" id="opt3"><label for="opt3" name="qcm"></label></div>
+				<div><input type="radio" name="input" id="opt4"><label for="opt4" name="qcm"></label></div>
+
+				<div class="categorie">
+					<div>Dans quel catégorie ce mot doit-il être classé?</div>
+					<div>
+						<input type="radio" name="categorie" id="cat1"><label for="cat1" name="name_cat"></label>
+						<input type="radio" name="categorie" id="cat2"><label for="cat2" name="name_cat"></label>
+						<input type="radio" name="categorie" id="cat3"><label for="cat3" name="name_cat"></label>
+						<input type="radio" name="categorie" id="cat4"><label for="cat4" name="name_cat"></label>
+						<input type="radio" name="categorie" id="cat5"><label for="cat5" name="name_cat"></label>
+						<input type="radio" name="categorie" id="cat6"><label for="cat6" name="name_cat"></label>
+						<input type="radio" name="categorie" id="cat7"><label for="cat7" name="name_cat"></label>
+						<input type="radio" name="categorie" id="cat8"><label for="cat8" name="name_cat"></label>
+						<input type="radio" name="categorie" id="cat9"><label for="cat9" name="name_cat"></label>
+						<input type="radio" name="categorie" id="cat10"><label for="cat10" name="name_cat"></label>
+					</div>
+				</div>
+
+				<div>
+					<div>Difficulté du mot :</div>
+					<input type="range" id="difficulty" min="0" max="10" style="left:5px; top:0px">
+				</div>
+			</form>
+		</div>
+
+		<div class="reload"><a onclick="suivant()">次 - Suivant</a></div>
+	</body>
+	<script type="text/javascript" src="socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>日本語の勉強</title>
+		<meta charset="utf-8">
+		<link rel="shortcut icon" href="icone.ico">
+		<link rel="stylesheet" href="nnb.css">
+	</head>
+
+	<body>
+		<header>
+			<div><a href="/">S'exercer</a></div>
+			<div><a href="/rechercher">Rechercher</a></div>
+			<div><a href="/ajouter">Ajouter</a></div>
+		</header>
+
+        <div class="flex">
+            <div>
+                <div id="japAff" class="mot_principal"></div>
+                <div id="kanaAff"></div>
+                <div id="romaAff"></div>
+                <div id="fraAff"></div>
+            </div>
+
+            <div>
+                <form method="" action="" id="form">
+                    <div>
+                        <label for="fra">Français</label>
+                        <input type="text" id="fra">
+                    </div>
+                    <div>
+                        <label for="jap">Japonais</label>
+                        <input type="text" id="jap">
+                    </div>
+                    <div>
+                        <label for="kana">Kana (facultatif)</label>
+                        <input type="text" id="kana">
+                    </div>
+                    <div>
+                        <label for="roma">Romaji</label>
+                        <input type="text" id="roma">
+                    </div>
+                    <div>
+                        <div><input type="radio" name="categorie" id="cat1"><label for="cat1" name="name_cat"></label></div>
+						<div><input type="radio" name="categorie" id="cat2"><label for="cat2" name="name_cat"></label></div>
+						<div><input type="radio" name="categorie" id="cat3"><label for="cat3" name="name_cat"></label></div>
+						<div><input type="radio" name="categorie" id="cat4"><label for="cat4" name="name_cat"></label></div>
+						<div><input type="radio" name="categorie" id="cat5"><label for="cat5" name="name_cat"></label></div>
+						<div><input type="radio" name="categorie" id="cat6"><label for="cat6" name="name_cat"></label></div>
+                        <div><input type="radio" name="categorie" id="cat7"><label for="cat7" name="name_cat"></label></div>
+                        <div><input type="radio" name="categorie" id="cat8"><label for="cat8" name="name_cat"></label></div>
+                        <div><input type="radio" name="categorie" id="cat9"><label for="cat9" name="name_cat"></label></div>
+                        <div><input type="radio" name="categorie" id="cat10"><label for="cat10" name="name_cat"></label></div>
+                    </div>
+                    <div>
+                        <div>Difficulté</div>
+                        <input type="range" id="difficulty" min="0" max="10" style="left:5px; top:0px">
+                    </div>
+
+                    <button type="submit" value="save">Modifier le mot</button>
+                    <div>
+                        <map name="clickDelete">
+                            <area shape="circle" coords="15, 15, 15" onclick="supprimer()">
+                        </map>
+                        <img usemap="#clickDelete" src="delete.png" class="delete">
+                    </div>
+                </form>
+            </div>
+        </div>
+	</body>
+	<script type="text/javascript" src="socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="modifier.js"></script>
+</html>

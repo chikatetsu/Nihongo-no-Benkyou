@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>日本語の勉強</title>
+		<meta charset="utf-8">
+		<link rel="shortcut icon" href="icone.ico">
+		<link rel="stylesheet" href="nnb.css">
+	</head>
+
+	<body>
+		<header>
+			<div><a href="/">S'exercer</a></div>
+			<div><a href="/rechercher">Rechercher</a></div>
+			<div><a href="/ajouter">Ajouter</a></div>
+		</header>
+
+		<div>
+			<form action="" id="form">
+				<div>
+					<label for="fra">Français</label>
+					<input type="text" id="fra">
+				</div>
+				<div>
+					<label for="jap">Japonais</label>
+					<input type="text" id="jap">
+				</div>
+				<div>
+					<label id="kana">Kana (facultatif)</label>
+					<input type="text" id="kana">
+				</div>
+				<div>
+					<label for="roma">Romaji</label>
+					<input type="text" id="roma">
+				</div>
+				<button type="submit">Ajouter au vocabulaire</button>
+				<div id="result"></div>
+			</form>
+		</div>
+	</body>
+	<script type="text/javascript" src="socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="ajouter.js"></script>
+</html>

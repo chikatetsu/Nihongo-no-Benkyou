@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>日本語の勉強</title>
+		<meta charset="utf-8">
+		<link rel="shortcut icon" href="icone.ico">
+		<link rel="stylesheet" href="nnb.css">
+	</head>
+
+	<body>
+		<header>
+			<div><a href="/">S'exercer</a></div>
+			<div><a href="/rechercher">Rechercher</a></div>
+			<div><a href="/ajouter">Ajouter</a></div>
+		</header>
+
+		<label for="rechercher">Rechercher</label>
+		<input type="text" id="rechercher"></br>
+		<div id="result"></div>
+		<map name="clickInserer">
+			<area shape="circle" coords="15, 15, 15" href="/ajouter">
+		</map>
+		<img usemap="#clickInserer" src="inserer.png" class="delete">
+	</body>
+	<script type="text/javascript" src="socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="rechercher.js"></script>
+</html>

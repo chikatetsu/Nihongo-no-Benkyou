@@ -1,0 +1,59 @@
+body {
+	background-color: #000;
+	color: #fff;
+	font-family: "Microsoft YaHei UI";
+	text-align: center;
+	margin: 0;
+}
+
+header {
+	display: flex;
+	justify-content: space-evenly;
+	background-color: #d00;
+	padding: 1%;
+}
+
+a {
+	display: inline-block;
+	color: #fff;
+	text-decoration: none;
+}
+a::after {
+	content: '';
+	display: block;
+	width: 0px;
+	height: 1px;
+	background-color: #fff;
+	transition: 0.5s;
+}
+a:hover::after {
+	width : 100%;
+}
+
+.mot_principal {
+	text-align: center;
+	font-size: 6rem;
+}
+.mot_secondaire {
+	color: #000;
+	margin-left: 0.25em;
+}
+
+.reload {
+	text-align: right;
+}
+
+.flex {
+	display: flex;
+	justify-content: center;
+	margin: 0.5em;
+}
+
+.delete {
+	width: 30px;
+	height: auto;
+}
+
+.categorie {
+	margin: 1em
+}
