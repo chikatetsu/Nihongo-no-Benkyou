@@ -37,15 +37,21 @@ function refresh() {
 
 /** Vérifie que le tableau ne contient pas l'élément donné en paramètre */
 function verifDouble(element) {
-    var existe = false;
-    for(var i=0; i<mots.length; i++) {
-        if(mots[i].id == element.id) {
-            existe = true;
-            socket.emit("suivant");
+    if(element == null) {
+        socket.emit("suivant");
+    }
+    else {
+        var existe = false;
+        for(var i=0; i<mots.length; i++) {
+            if(mots[i].id == element.id) {
+                existe = true;
+                socket.emit("suivant");
+            }
+        }
+        if(!existe) {
+            mots.push(element);
         }
     }
-    if(!existe)
-        mots.push(element);
 }
 
 

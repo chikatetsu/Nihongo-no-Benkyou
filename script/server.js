@@ -174,10 +174,12 @@ io.on("connection", (socket) => {
 
     //PAGE D'AJOUT
     if(page == "/ajouter") {
+        getCategorie(socket);
+
         socket.on("ajouter", (res) => {
             db.query(
-                "INSERT INTO `voc` (`fra`, `jap`, `kana`, `roma`) VALUES (?,?,?,?)",
-                [res.fra, res.jap, res.kana, res.roma],
+                "INSERT INTO `voc` (`fra`, `jap`, `kana`, `roma`, `difficulte`, `idCategorie`) VALUES (?,?,?,?,?,?)",
+                [res.fra, res.jap, res.kana, res.roma, res.difficulte, res.categorie],
                 (err) => {
                     if(err) {
                         socket.emit("success", false);
@@ -185,7 +187,7 @@ io.on("connection", (socket) => {
                     }
                     else {
                         socket.emit("success", true);
-                        console.log(res.fra+" : "+res.jap+" ("+res.kana+") "+res.roma);
+                        console.log(res);
                     }
                 }
             );

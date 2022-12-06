@@ -58,12 +58,15 @@ form.addEventListener("submit", (event) => {
     //Empèche l'envoie du formulaire
     event.preventDefault();
     
-    if(fra.value == "")
+    if(fra.value == "") {
         alert("Votre mot ne possède pas de traduction française");
-    else if(jap.value == "")
+    }
+    else if(jap.value == "") {
         alert("Votre mot ne possède pas de traduction japonaise");
-    else if(roma.value == "")
+    }
+    else if(roma.value == "") {
         alert("Votre mot ne possède pas de transcription en romaji");
+    }
     else {
         modif.fra = fra.value;
         modif.jap = jap.value;
