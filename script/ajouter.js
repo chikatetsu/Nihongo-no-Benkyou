@@ -7,9 +7,17 @@ var categorie = document.getElementsByName("categorie");
 var name_cat = document.getElementsByName("name_cat");
 var difficulty = document.getElementById("difficulty");
 
+var accent = document.getElementsByName("accent");
 var result = document.getElementById("result");
 var socket = io();
 var ajout = {};
+
+//Écouteurs d'événements pour les accents
+accent.forEach(i => {
+    i.addEventListener("click", event => {
+        roma.value += i.value;
+    });
+});
 
 //Affiche les catégories
 socket.on("categorie", (cat) => {

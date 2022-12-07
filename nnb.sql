@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 06 déc. 2022 à 08:37
+-- Généré le : mer. 07 déc. 2022 à 08:12
 -- Version du serveur : 10.4.21-MariaDB
 -- Version de PHP : 8.0.11
 
@@ -1713,16 +1713,12 @@ INSERT INTO `voc` (`id`, `fra`, `jap`, `kana`, `roma`, `difficulte`, `idCategori
 (1620, 'Quelque part', 'どこか', NULL, 'dokoka', 2, 8),
 (1621, 'Quelque chose', '何か', 'なにか', 'nanika', 2, 4),
 (1622, 'Un jour', 'いつか', NULL, 'itsuka', NULL, NULL),
-(1623, 'Tout le monde', '誰も', 'だれも', 'daremo', NULL, NULL),
-(1624, 'Partout', 'どこも', NULL, 'dokomo', NULL, NULL),
-(1625, 'Tout', '何も', 'なにも', 'nanimo', 2, 4),
+(1625, 'Rien', '何も', 'なにも', 'nanimo', 2, 4),
 (1626, 'Toujours', 'いつも', NULL, 'itsumo', 3, 10),
-(1627, 'Personne', '誰もない', 'だれもない', 'daremonai', 2, 4),
-(1628, 'Nulle part', 'どこもない', NULL, 'dokomonai', NULL, NULL),
-(1629, 'Rien', '何もない', 'なにもない', 'nanimonai', NULL, NULL),
-(1630, 'Jamais', 'いつもない', NULL, 'itsumonai', NULL, NULL),
-(1631, 'N\'importe qui', '誰でも', 'だれでも', 'darededmo', NULL, NULL),
-(1632, 'N\'importe où', 'どこでも', NULL, 'dokodemo', NULL, NULL),
+(1627, 'Personne', '誰も', 'だれも', 'daremo', 2, 4),
+(1628, 'Nulle part', 'どこも', NULL, 'dokomo', 2, 4),
+(1631, 'Tout le monde, n\'importe qui', '誰でも', 'だれでも', 'daredemo', 2, 4),
+(1632, 'Partout, N\'importe où', 'どこでも', NULL, 'dokodemo', 2, 4),
 (1633, 'N\'importe quoi', '何でも', 'なんでも', 'nandemo', 3, 8),
 (1634, 'N\'importe quand', 'いつでも', NULL, 'itsudemo', 3, 4),
 (1635, 'Combien de personnes?', '何人', 'なんにん', 'nannin', NULL, NULL),
@@ -1978,7 +1974,7 @@ INSERT INTO `voc` (`id`, `fra`, `jap`, `kana`, `roma`, `difficulte`, `idCategori
 (1885, 'Monter dans un véhicule (五段)', '乗る', 'のる', 'noru', NULL, NULL),
 (1886, 'Passer par (五段)', '通る', 'とおる', 'tōru', NULL, NULL),
 (1887, 'Prendre (五段)', '取る', 'とる', 'toru', NULL, NULL),
-(1888, 'Prendre une photo (五段)', '撮る', 'とる', 'toru', NULL, NULL),
+(1888, 'Prendre une photo', '撮る', 'とる', 'toru', 4, 2),
 (1889, 'Prier', '祈る', 'いのる', 'inoru', 6, 2),
 (1890, 'Raconter', '語る', 'かたる', 'kataru', 4, 2),
 (1891, 'Rentrer chez soi', '帰る', 'かえる', 'kaeru', 4, 2),
@@ -2025,16 +2021,20 @@ INSERT INTO `voc` (`id`, `fra`, `jap`, `kana`, `roma`, `difficulte`, `idCategori
 (1932, 'Être de présence(inanimé)', 'ある', NULL, 'aru', 1, 3),
 (1933, 'Faire', 'する', NULL, 'suru', 1, 3),
 (1934, 'Étudier', '勉強する', 'べんきょう', 'benkyōsuru', NULL, NULL),
-(1935, 'Évaluer', '評価する', 'ひょうかする', 'hyōkasuru', 4, 3);
-INSERT INTO `voc` (`id`, `fra`, `jap`, `kana`, `roma`, `difficulte`, `idCategorie`) VALUES
+(1935, 'Évaluer', '評価する', 'ひょうかする', 'hyōkasuru', 4, 3),
 (1936, 'S\'inquiéter', '心配する', 'しんぱいする', 'shinpaisuru', NULL, NULL),
 (1937, 'Se promener', '散歩する', 'さんぽする', 'sanposuru', NULL, NULL),
 (1938, 'Venir', '来る', 'くる', 'kuru', NULL, NULL),
-(1939, 'Me donner', 'くれる', NULL, 'kureru', NULL, NULL),
+(1939, 'Me donner', 'くれる', NULL, 'kureru', NULL, NULL);
+INSERT INTO `voc` (`id`, `fra`, `jap`, `kana`, `roma`, `difficulte`, `idCategorie`) VALUES
 (1944, 'Rapidement', '早く', 'はやく', 'hayaku', 2, 10),
 (1945, '1 semaine', '一週間', 'いっしゅうかん', 'isshūkan', 3, 7),
 (1946, 'Nouvel an', '年越し', 'としこし', 'toshikoshi', 2, 4),
-(1947, 'Mes grands parents', 'おじいさんとおばあさん', NULL, 'ojīsan to obāsan', 2, 4);
+(1947, 'Mes grands parents', 'おじいさんとおばあさん', NULL, 'ojīsan to obāsan', 2, 4),
+(1948, 'Racine', '根っこ', 'ねっこ', 'nekko', 6, 4),
+(1949, 'Mes grands parents (familier)', 'じいちゃんとばあちゃん', NULL, 'jīchan to bāchan', 2, 4),
+(1950, 'Aquarium (lieu)', '水族館', 'すいぞくかん', 'suizokukan', 5, 4),
+(1951, 'Pouvoir voir', '見える', 'みえる', 'mieru', 2, 1);
 
 --
 -- Index pour les tables déchargées
@@ -2084,7 +2084,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `voc`
 --
 ALTER TABLE `voc`
-  MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1948;
+  MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1952;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
