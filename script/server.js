@@ -13,6 +13,7 @@ var page;
 
 //Routes des fichiers à ajouter dans les pages
 app.get("/nnb.css", (req, res) => {res.sendFile(path.join(__dirname, "..", "/html/nnb.css"));});
+app.get("/hamburger.css", (req, res) => {res.sendFile(path.join(__dirname, "..", "/html/hamburger.css"));});
 app.get("/index.js", (req, res) => {res.sendFile(path.join(__dirname, "/index.js"));});
 app.get("/rechercher.js", (req, res) => {res.sendFile(path.join(__dirname, "/rechercher.js"));});
 app.get("/ajouter.js", (req, res) => {res.sendFile(path.join(__dirname, "/ajouter.js"));});

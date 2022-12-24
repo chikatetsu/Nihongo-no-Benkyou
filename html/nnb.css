@@ -7,8 +7,6 @@ body {
 }
 
 header {
-	display: flex;
-	justify-content: space-evenly;
 	background-color: #d00;
 	padding: 1%;
 }
@@ -47,6 +45,10 @@ a:hover::after {
 	display: flex;
 	justify-content: center;
 	margin: 0.5em;
+}
+
+.evenly {
+	justify-content: space-evenly;
 }
 
 .delete {

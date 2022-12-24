@@ -39,3 +39,10 @@ Prévu pour les versions futures :
     
   - Plus tard, si possible, ajouter un autre jeu en parallèle du QCM pour apprendre les kana (l'alphabet japonais)
   
+Nouveaux modes de jeu à venir :
+- QCM fra->jap
+- QCM jap->fra
+- Traduction fra->jap
+- Traduction jap->fra
+- Prononciation d'un mot en kanji
+- Hiragana et Katakana

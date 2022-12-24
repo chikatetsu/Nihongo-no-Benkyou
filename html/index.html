@@ -5,21 +5,42 @@
 		<meta charset="utf-8">
 		<link rel="shortcut icon" href="icone.ico">
 		<link rel="stylesheet" href="nnb.css">
+		<link rel="stylesheet" href="hamburger.css">
 	</head>
 
 	<body>
 		<header>
-			<div><a href="/">S'exercer</a></div>
-			<div><a href="/rechercher">Rechercher</a></div>
-			<div><a href="/ajouter">Ajouter</a></div>
+			<nav>
+				<!--Menu hamburger-->
+				<div class="menuToggle">
+					<input type="checkbox" />
+					<span></span>
+					<span></span>
+					<span></span>
+	
+					<ul class="menu">
+						<div><li>Home</li></div>
+						<div><li>Home</li></div>
+						<div><li>Home</li></div>
+						<div><li>Home</li></div>
+					</ul>
+				</div>
+
+				<!--Bandeau-->
+				<div class="flex evenly">
+					<div><a href="/">S'exercer</a></div>
+					<div><a href="/rechercher">Rechercher</a></div>
+					<div><a href="/ajouter">Ajouter</a></div>
+				</div>
+			</nav>
 		</header>
 
 		<!--Affiche le caractère japonais-->
-		<div id="jap" class="mot_principal"></div>
+		<div id="question" class="mot_principal"></div>
 		<!--Affiche les kana (enlever si il n'y en a pas)-->
 		<div id="kanaAll" class="flex"><div id="kanaTitle">Kana :</div><div id="kana" class="mot_secondaire"></div></div>
-		<!--Affiche les romajis-->
-		<div id="romaAll" class="flex"><div>Romaji :</div><div id="roma" class="mot_secondaire"></div></div>
+		<!--Affiche les romaji-->
+		<div id="romaAll" class="flex"><div id="romaTitle">Romaji :</div><div id="roma" class="mot_secondaire"></div></div>
 		
 		<div>
 			<form action="" id="form">

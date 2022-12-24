@@ -1,10 +1,13 @@
 //Éléments HTML
-jap = document.getElementById("jap");
+question = document.getElementById("question");
+
 kanaAll = document.getElementById("kanaAll");
 kanaTitle = document.getElementById("kanaTitle");
 kana = document.getElementById("kana");
 romaAll = document.getElementById("romaAll");
+romaTitle = document.getElementById("romaTitle");
 roma = document.getElementById("roma");
+
 qcm = document.getElementsByName("qcm");
 input = document.getElementsByName("input");
 categorie = document.getElementsByName("categorie");
@@ -54,13 +57,89 @@ function verifDouble(element) {
     }
 }
 
+/** Initialise le formulaire pour le QCM Jap->Fra */
+function initJapToFra() {
+    //Change le mot à retrouver
+    question.innerHTML = mots[0].jap;
+    kana.innerHTML = mots[0].kana
+    roma.innerHTML = mots[0].roma;
+    romaTitle.innerHTML = "Romaji :";
+    if(mots[0].kana == null)
+        kanaTitle.innerHTML = "";
+    else {
+        kanaTitle.innerHTML = "Kana :";
+    }
+
+    //Change les options du qcm pour ce mot
+    var random = Math.floor(Math.random()*3);
+    var j = 1;
+    for(var i=0; i<qcm.length; i++) {
+        if(i == random)
+            qcm[i].innerHTML = mots[0].fra;
+        else {
+            qcm[i].innerHTML = mots[j].fra;
+            j++;
+        }
+    }
+}
+
+/** Initialise le formulaire pour le QCM Fra->Jap */
+function initFraToJap() {
+    //Change le mot à retrouver
+    question.innerHTML = mots[0].fra;
+    kanaTitle.innerHTML = "";
+    romaTitle.innerHTML = "";
+
+    //Change les options du qcm pour ce mot
+    var random = Math.floor(Math.random()*3);
+    var j = 1;
+    for(var i=0; i<qcm.length; i++) {
+        if(i == random)
+            qcm[i].innerHTML = mots[0].jap;
+        else {
+            qcm[i].innerHTML = mots[j].jap;
+            j++;
+        }
+    }
+}
+
+/** Vérifie les réponses du QCM Jap->Fra et change les styles */
+function checkResponseJapToFra(choix) {
+    if(choix.innerHTML != mots[0].fra) {
+        choix.style.color = "red";
+    }
+    qcm.forEach((reponse) => {
+        if(reponse.innerHTML == mots[0].fra) {
+            reponse.style.color = "lime";
+        }
+        else {
+            reponse.style.textDecoration = "line-through";
+        }
+    });
+}
+
+/** Vérifie les réponses du QCM Fra->Jap et change les styles */
+function checkResponseFraToJap(choix) {
+    if(choix.innerHTML != mots[0].jap) {
+        choix.style.color = "red";
+    }
+    qcm.forEach((reponse) => {
+        if(reponse.innerHTML == mots[0].jap) {
+            reponse.style.color = "lime";
+        }
+        else {
+            reponse.style.textDecoration = "line-through";
+        }
+    });
+}
+
 
 
 //Cache les kana et les romaji et les affiche lors du click
 kanaAll.addEventListener("click", (event) => {
     kana.style.color = "#fff";
 });
-roma.addEventListener("click", (event) => {
+romaAll.addEventListener("click", (event) => {
     roma.style.color = "#fff";
 });
 
@@ -68,14 +147,8 @@ roma.addEventListener("click", (event) => {
 input.forEach(i => {
     i.addEventListener("click", event => {
         var choix = event.target.nextSibling;
-        if(choix.innerHTML != mots[0].fra)
-            choix.style.color = "red";
-        qcm.forEach((j) => {
-            if(j.innerHTML == mots[0].fra)
-                j.style.color = "lime";
-            else
-                j.style.textDecoration = "line-through";
-        });
+        checkResponseJapToFra(choix);
+        //checkResponseFraToJap(choix);
     });
 });
 
@@ -87,7 +160,7 @@ categorie.forEach(i => {
     });
 });
 
-//Change la diifculté lors du changement de la position du curseur
+//Change la diffculté lors du changement de la position du curseur
 difficulty.addEventListener("change", event => {
     console.log("Changement de difficulté : "+difficulty.value);
     socket.emit("setDifficulty", difficulty.value, mots[0].id);
@@ -99,36 +172,17 @@ difficulty.addEventListener("change", event => {
 socket.on("option", (mot) => {
     console.log(mot);
     
-    if(mots.length < 4)
+    if(mots.length < 4) {
         verifDouble(mot);
-
+    }
     if(mots.length == 4) {
-        //Change le mot à retrouver
-        jap.innerHTML = mots[0].jap;
-        kana.innerHTML = mots[0].kana
-        roma.innerHTML = mots[0].roma;
-        if(mots[0].kana == null)
-            kanaTitle.innerHTML = "";
-        else {
-            kanaTitle.innerHTML = "Kana :";
-        }
+        initJapToFra();
+        //initFraToJap();
         //Présélectionne la catégorie si elle a été enregistré
         if(mots[0].idCategorie != null) {
             categorie[mots[0].idCategorie -1].checked = true;
         }
         difficulty.value = mots[0].difficulte;
-
-        //Change les options du qcm pour ce mot
-        var random = Math.floor(Math.random()*3);
-        var j = 1;
-        for(var i=0; i<qcm.length; i++) {
-            if(i == random)
-                qcm[i].innerHTML = mots[0].fra;
-            else {
-                qcm[i].innerHTML = mots[j].fra;
-                j++;
-            }
-        }
     }
 });
 
